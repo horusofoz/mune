@@ -2,8 +2,8 @@ const btnOracle = document.querySelector("#button-oracle");
 const btnIntervention = document.querySelector("#button-intervention");
 const btnPortent = document.querySelector("#button-portent");
 const btnTwene = document.querySelector("#button-twene");
-const btnPlots = document.querySelector("#button-plots");
-const btnEntities = document.querySelector("#button-entities");
+// const btnPlots = document.querySelector("#button-plots");
+// const btnEntities = document.querySelector("#button-entities");
 const btnExport = document.querySelector("#button-export");
 
 const panels = document.querySelectorAll(".panel");
@@ -608,15 +608,15 @@ function getTweneString(twene) {
   return `<p class="oracle">TWENE: ${twene}</p><p>`;
 }
 
-/* PLOTS */
-btnPlots.addEventListener("click", function (e) {
-  notImplemented(e);
-});
+// /* PLOTS */
+// btnPlots.addEventListener("click", function (e) {
+//   notImplemented(e);
+// });
 
-/* ENTITIES */
-btnEntities.addEventListener("click", function (e) {
-  notImplemented(e);
-});
+// /* ENTITIES */
+// btnEntities.addEventListener("click", function (e) {
+//   notImplemented(e);
+// });
 
 /* EXPORT */
 btnExport.addEventListener("click", function () {
