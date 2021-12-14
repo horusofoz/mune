@@ -16,22 +16,17 @@
   </header>
   <main>
     <section class="menu-bar">
-      <button class="menu-button" id="menu-button-write">Write</button>
       <button class="menu-button" id="menu-button-oracle">Oracle</button>
       <button class="menu-button" id="menu-button-portent">Portent</button>
       <button class="menu-button" id="menu-button-twene">TWENE</button>
     </section>
-    <section class="menu-panel">
-
-
-      <div class="panel-input hidden" id="panel-input-oracle">
-        <div class="panel-input-row">
+    <section class="panel-container">
+      <div class="panel hidden" id="panel-oracle">
+        <div class="panel-row">
           <label for="input-question">Question</label>
           <input type="text" id="input-question" name="input-question">
         </div>
-
-
-        <div class="panel-input-row">
+        <div class="panel-row">
           <div class="input-likelihood-wrapper">
             <label for="input-likelihood">Likelihood</label>
             <select name="input-likelihood" id="input-likelihood">
@@ -40,23 +35,9 @@
               <option value="likely">Likely</option>
             </select>
           </div>
-          <p>Intervention Points: <span name="display-intervention-points" id="display-intervention-points">0</span></p>
+          <p>Intervention Points: <span id="display-intervention-points">0</span></p>
         </div>
-
-
         <button class="submit-button" id="oracle-get">Ask</button>
-      </div>
-
-
-
-
-
-
-      <div class="panel-input hidden" id="panel-input-portent">
-        <button class="submit-button" id="portent-get">Portend</button>
-      </div>
-      <div class="panel-input hidden" id="panel-input-twene">
-        <button class="submit-button" id="twene-get">Discover</button>
       </div>
 
     </section>

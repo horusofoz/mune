@@ -206,13 +206,13 @@ main {
   background-color: #006e52;
 }
 
-.panel-input {
+.panel {
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
 }
 
-.panel-input-row {
+.panel-row {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
@@ -223,14 +223,14 @@ main {
   align-items: center;
 }
 
-.panel-input label,
-.panel-input p {
+.panel label,
+.panel p {
   color: #008060;
   margin: 0;
 }
 
-.panel-input #input-question,
-.panel-input #input-likelihood {
+.panel #input-question,
+.panel #input-likelihood {
   flex-grow: 1;
   border: 1px solid #008060;
   background: #ffffff;
@@ -260,10 +260,6 @@ main {
   main {
     width: 95%;
   }
-}
-
-button:disabled {
-  cursor: not-allowed;
 }
 
 .oracle {
