@@ -1,7 +1,10 @@
-const menuBtnOracle = document.querySelector("#menu-button-oracle");
-const menuBtnIntervention = document.querySelector("#menu-button-intervention");
-const menuBtnPortent = document.querySelector("#menu-button-portent");
-const menuBtnTwene = document.querySelector("#menu-button-twene");
+const btnOracle = document.querySelector("#button-oracle");
+const btnIntervention = document.querySelector("#button-intervention");
+const btnPortent = document.querySelector("#button-portent");
+const btnTwene = document.querySelector("#button-twene");
+const btnPlots = document.querySelector("#button-plots");
+const btnEntities = document.querySelector("#button-entities");
+const btnSave = document.querySelector("#button-save");
 
 const panels = document.querySelectorAll(".panel");
 const panelOracle = document.querySelector("#panel-oracle");
@@ -31,23 +34,40 @@ function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function download(filename, text) {
+  var element = document.createElement("a");
+  element.setAttribute(
+    "href",
+    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+  );
+  element.setAttribute("download", filename);
+  element.style.display = "none";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+
 function appendOutput(string) {
   tinyMCE.execCommand("mceInsertContent", false, string);
 }
 
+function notImplemented(event) {
+  appendOutput(`<p class="game">${event.target.id} not implemented`);
+}
+
 /*ORACLE*/
-const btnOracleGet = document.querySelector("#oracle-get");
+const btnOracleAsk = document.querySelector("#oracle-ask");
 const diplayInterventionPoints = document.querySelector(
   "#display-intervention-points"
 );
 let oracleLikelihood = "even";
 let interventionPoints = 0;
 
-menuBtnOracle.addEventListener("click", function () {
+btnOracle.addEventListener("click", function () {
   setPanelVisibility(panelOracle);
 });
 
-btnOracleGet.addEventListener("click", function () {
+btnOracleAsk.addEventListener("click", function () {
   let answer = getOracleAnswer();
   let string = getOracleString(answer);
   appendOutput(string);
@@ -143,7 +163,7 @@ function testOracleIntervention(oracle) {
 }
 
 /* INTERVENTION */
-menuBtnIntervention.addEventListener("click", function () {
+btnIntervention.addEventListener("click", function () {
   let intervention = getIntervention();
   let string = getInterventionString(intervention);
   appendOutput(string);
@@ -168,7 +188,7 @@ function getInterventionString(intervention) {
 }
 
 /* PORTENT */
-menuBtnPortent.addEventListener("click", function () {
+btnPortent.addEventListener("click", function () {
   let portent = getPortent();
   let string = getPortentString(portent);
   appendOutput(string);
@@ -559,8 +579,7 @@ const nouns = [
 ];
 
 /* TWENE */
-
-menuBtnTwene.addEventListener("click", function () {
+btnTwene.addEventListener("click", function () {
   let twene = getTwene();
   let string = getTweneString(twene);
   appendOutput(string);
@@ -587,3 +606,18 @@ function getTwene() {
 function getTweneString(twene) {
   return `<p class="oracle">TWENE: ${twene}</p><p>`;
 }
+
+/* PLOTS */
+btnPlots.addEventListener("click", function (e) {
+  notImplemented(e);
+});
+
+/* ENTITIES */
+btnEntities.addEventListener("click", function (e) {
+  notImplemented(e);
+});
+
+/* SAVE */
+btnSave.addEventListener("click", function (e) {
+  notImplemented(e);
+});

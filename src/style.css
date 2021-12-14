@@ -160,9 +160,10 @@ main {
 .menu-bar {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
-.menu-button {
+.menu-button, .panel-button {
   display: inline-block;
   outline: 0;
   cursor: pointer;
@@ -180,30 +181,8 @@ main {
   flex: 1;
 }
 
-.menu-button:hover {
+.menu-button:hover, .panel-button:hover {
   background: #006e52;
-}
-
-.submit-button {
-  display: inline-block;
-  outline: 0;
-  cursor: pointer;
-  text-align: center;
-  border: 0;
-  padding: 7px 16px;
-  height: 3rem;
-  color: #ffffff;
-  background: #008060;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 14px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
-    rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
-  width: 100%;
-}
-
-.submit-button:hover {
-  background-color: #006e52;
 }
 
 .panel {
@@ -259,6 +238,10 @@ main {
 @media (max-width: 800px) {
   main {
     width: 95%;
+  }
+
+  .menu-button, .panel-button {
+    height: 2rem;
   }
 }
 

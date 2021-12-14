@@ -3,11 +3,12 @@ tinymce.init({
   height: "100%",
   resize: false,
   menubar: false,
-  plugins: "save, print code",
-  toolbar: "undo redo | styleselect | bold italic save print code",
-  save_onsavecallback: function () {
+  plugins: "save print code",
+  toolbar: "undo redo | styleselect | bold italic",
+  /*save_onsavecallback: function () {
     tinyMCE.execCommand("mceInsertContent", false, "Save not yet implemented.");
-  },
+    download('mune.txt', tinymce.activeEditor.getContent())
+  },*/
   style_formats: [
     {
       title: "Headings",
@@ -51,7 +52,7 @@ tinymce.init({
       ],
     },
     {
-      title: "MUNE",
+      title: "Mune",
       items: [
         { title: "Oracle", block: "p", styles: { color: "#008060" } },
         { title: "Game", block: "p", styles: { color: "#800000" } },
