@@ -37,7 +37,11 @@ function appendOutput(string) {
 
 /*ORACLE*/
 const btnOracleGet = document.querySelector("#oracle-get");
+const diplayInterventionPoints = document.querySelector(
+  "#display-intervention-points"
+);
 let oracleLikelihood = "even";
+let interventionPoints = 0;
 
 menuBtnOracle.addEventListener("click", function () {
   setPanelVisibility(panelOracle);
@@ -48,6 +52,7 @@ btnOracleGet.addEventListener("click", function () {
   let string = getOracleString(answer);
   appendOutput(string);
   resetOracleInputs();
+  testOracleIntervention(answer);
 });
 
 oracleInputLikelihood.addEventListener("change", function () {
@@ -116,6 +121,25 @@ function resetOracleInputs() {
   oracleInputQuestion.value = "";
   oracleInputLikelihood.value = "even";
   oracleLikelihood = "even";
+}
+
+function testOracleIntervention(oracle) {
+  if (oracle.roll1 === 6) {
+    interventionPoints++;
+  }
+  if (oracle.roll2 === 6) {
+    interventionPoints++;
+  }
+  diplayInterventionPoints.textContent = interventionPoints;
+
+  if (interventionPoints >= 3) {
+    let intervention = getIntervention();
+    let string = getInterventionString(intervention);
+    appendOutput(`<p class="oracle">Intervention Triggered!</p><p>`);
+    appendOutput(string);
+    interventionPoints = 0;
+    diplayInterventionPoints.textContent = 0;
+  }
 }
 
 /* INTERVENTION */
