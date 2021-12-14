@@ -30,6 +30,10 @@ function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+function appendOutput(string) {
+  tinyMCE.execCommand("mceInsertContent", false, string);
+}
+
 /*ORACLE*/
 const btnOracleGet = document.querySelector("#oracle-get");
 let oracleLikelihood = "even";
@@ -39,18 +43,9 @@ menuBtnOracle.addEventListener("click", function () {
 });
 
 btnOracleGet.addEventListener("click", function () {
-  if (oracleInputQuestion.value === "") {
-    tinyMCE.execCommand(
-      "mceInsertContent",
-      false,
-      "<p>You need to enter your question.</p>"
-    );
-    return false;
-  }
-
   let answer = getOracleAnswer();
   let string = getOracleString(answer);
-  setOracleOutput(string);
+  appendOutput(string);
   resetOracleInputs();
 });
 
@@ -94,24 +89,26 @@ function getOracleAnswer() {
 
 function getOracleString(oracle) {
   let oracleString = `<p class="oracle">${oracle.question}`;
+
   if (oracle.likelihood !== "even") {
     oracleString += ` (${oracle.likelihood})`;
   }
-  oracleString += `<br>${oracle.answer}`;
 
-  if (oracle.likelihood === "even") {
-    oracleString += ` (${oracle.finalRoll})`;
-  } else {
-    oracleString += ` (${oracle.roll1}, ${oracle.roll2})`;
+  if (oracleString !== '<p class="oracle">') {
+    oracleString += `<br>`;
   }
+
+  oracleString += `${oracle.answer}`;
+
+  // if (oracle.likelihood === "even") {
+  //   oracleString += ` (${oracle.finalRoll})`;
+  // } else {
+  //   oracleString += ` (${oracle.roll1}, ${oracle.roll2})`;
+  // }
 
   oracleString += `</p><p></p>`;
 
   return oracleString;
-}
-
-function setOracleOutput(string) {
-  tinyMCE.execCommand("mceInsertContent", false, string);
 }
 
 function resetOracleInputs() {
@@ -125,7 +122,7 @@ function resetOracleInputs() {
 menuBtnPortent.addEventListener("click", function () {
   let portent = getPortent();
   let string = getPortentString(portent);
-  setPortentOutput(string);
+  appendOutput(string);
 });
 
 function getPortent() {
@@ -143,10 +140,6 @@ function getPortentString(portent) {
   string += `${portent.noun}`;
   string += `</p><p>`;
   return string;
-}
-
-function setPortentOutput(string) {
-  tinyMCE.execCommand("mceInsertContent", false, string);
 }
 
 const verbs = [
@@ -521,7 +514,7 @@ const nouns = [
 menuBtnTwene.addEventListener("click", function () {
   let twene = getTwene();
   let string = getTweneString(twene);
-  setTweneOutput(string);
+  appendOutput(string);
 });
 
 function getTwene() {
@@ -544,8 +537,4 @@ function getTwene() {
 
 function getTweneString(twene) {
   return `<p class="oracle">TWENE: ${twene}</p><p>`;
-}
-
-function setTweneOutput(string) {
-  tinyMCE.execCommand("mceInsertContent", false, string);
 }

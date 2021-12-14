@@ -52,7 +52,6 @@ tinymce.init({
     },
     {
       title: "MUNE",
-      title: "MUNE",
       items: [
         { title: "Oracle", block: "p", styles: { color: "#008060" } },
         { title: "Game", block: "p", styles: { color: "#800000" } },
