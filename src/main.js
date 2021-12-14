@@ -1,4 +1,5 @@
 const menuBtnOracle = document.querySelector("#menu-button-oracle");
+const menuBtnIntervention = document.querySelector("#menu-button-intervention");
 const menuBtnPortent = document.querySelector("#menu-button-portent");
 const menuBtnTwene = document.querySelector("#menu-button-twene");
 
@@ -117,8 +118,32 @@ function resetOracleInputs() {
   oracleLikelihood = "even";
 }
 
-/* PORTENT */
+/* INTERVENTION */
+menuBtnIntervention.addEventListener("click", function () {
+  let intervention = getIntervention();
+  let string = getInterventionString(intervention);
+  appendOutput(string);
+});
 
+function getIntervention() {
+  const interventionTable = {
+    1: "New entity",
+    2: "Entity positive",
+    3: "Entity negative",
+    4: "Advance plot",
+    5: "Regress plot",
+    6: "Wild",
+  };
+
+  let roll = getRandomNum(1, 6);
+  return interventionTable[roll];
+}
+
+function getInterventionString(intervention) {
+  return `<p class="oracle">Intervention: ${intervention}</p><p>`;
+}
+
+/* PORTENT */
 menuBtnPortent.addEventListener("click", function () {
   let portent = getPortent();
   let string = getPortentString(portent);
