@@ -4,10 +4,11 @@ const btnPortent = document.querySelector("#button-portent");
 const btnTwene = document.querySelector("#button-twene");
 const btnPlots = document.querySelector("#button-plots");
 const btnEntities = document.querySelector("#button-entities");
-const btnSave = document.querySelector("#button-save");
+const btnExport = document.querySelector("#button-export");
 
 const panels = document.querySelectorAll(".panel");
 const panelOracle = document.querySelector("#panel-oracle");
+const panelExport = document.querySelector("#panel-export");
 
 const oracleInputQuestion = document.querySelector("#input-question");
 const oracleInputLikelihood = document.querySelector("#input-likelihood");
@@ -617,7 +618,58 @@ btnEntities.addEventListener("click", function (e) {
   notImplemented(e);
 });
 
-/* SAVE */
-btnSave.addEventListener("click", function (e) {
-  notImplemented(e);
+/* EXPORT */
+btnExport.addEventListener("click", function () {
+  setPanelVisibility(panelExport);
 });
+
+const btnExportHtml = document.querySelector("#export-html");
+const btnExportText = document.querySelector("#export-text");
+
+btnExportHtml.addEventListener("click", function () {
+  exportToHTML();
+});
+
+function exportToHTML() {
+  const htmlTemplateStart = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mune</title>
+  <style>
+  body {
+    font-family: "Helvetica";
+  }  
+  
+  .oracle {
+    color: #008060;
+  }
+
+  .game {
+    color: #800000;
+  }
+  </style>
+</head>
+<body>`;
+
+  const htmlTemplateEnd = `
+  </body>
+  </html>`;
+
+  let output = `${htmlTemplateStart}${tinymce.activeEditor.getContent()}${htmlTemplateEnd}`;
+  download("mune.html", output);
+}
+
+btnExportText.addEventListener("click", function (e) {
+  exportToText();
+});
+
+function exportToText() {
+  let htmlString = tinymce.activeEditor.getContent();
+  let htmlNode = document.createElement("div");
+  htmlNode.innerHTML = htmlString;
+  let output = htmlNode.textContent;
+  download("mune.txt", output);
+}
