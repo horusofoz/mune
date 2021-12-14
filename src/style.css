@@ -1,0 +1,275 @@
+/* CSS RESET
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  CUSTOM CSS
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+select {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+main {
+  height: 95vh;
+  width: 800px;
+  background: lightgray;
+  margin: auto;
+  font-family: "Helvetica";
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+}
+
+.menu-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-button {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+  padding: 7px 16px;
+  height: 3rem;
+  color: #ffffff;
+  background: #008060;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+  flex: 1;
+}
+
+.menu-button:hover {
+  background: #006e52;
+}
+
+.submit-button {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+  padding: 7px 16px;
+  height: 3rem;
+  color: #ffffff;
+  background: #008060;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #006e52;
+}
+
+.panel-input {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-input-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-input label,
+.panel-input p {
+  color: #008060;
+  margin: 0;
+}
+
+.panel-input #input-question,
+.panel-input #input-likelihood {
+  flex-grow: 1;
+  border: 1px solid #008060;
+  background: #ffffff;
+  color: #008060;
+  height: 1.5rem;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.writing {
+  height: 100%;
+  padding-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.input-likelihood-wrapper {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  main {
+    width: 95%;
+  }
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.oracle {
+  color: #008060;
+}
+
+.game {
+  color: #800000;
+}

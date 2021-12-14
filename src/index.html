@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MUNE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tiny.cloud/1/grg85nnbnbhq8t42zdql3l2pvv291lorq3doebwedk94b5i8/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+</head>
+
+<body>
+
+  <header>
+  </header>
+  <main>
+    <section class="menu-bar">
+      <button class="menu-button" id="menu-button-write">Write</button>
+      <button class="menu-button" id="menu-button-oracle">Oracle</button>
+      <button class="menu-button" id="menu-button-portent">Portent</button>
+      <button class="menu-button" id="menu-button-twene">TWENE</button>
+    </section>
+    <section class="menu-panel">
+
+
+      <div class="panel-input hidden" id="panel-input-oracle">
+        <div class="panel-input-row">
+          <label for="input-question">Question</label>
+          <input type="text" id="input-question" name="input-question">
+        </div>
+
+
+        <div class="panel-input-row">
+          <div class="input-likelihood-wrapper">
+            <label for="input-likelihood">Likelihood</label>
+            <select name="input-likelihood" id="input-likelihood">
+              <option value="unlikely">Unlikely</option>
+              <option value="even" selected>Even</option>
+              <option value="likely">Likely</option>
+            </select>
+          </div>
+          <p>Intervention Points: <span name="display-intervention-points" id="display-intervention-points">0</span></p>
+        </div>
+
+
+        <button class="submit-button" id="oracle-get">Ask</button>
+      </div>
+
+
+
+
+
+
+      <div class="panel-input hidden" id="panel-input-portent">
+        <button class="submit-button" id="portent-get">Portend</button>
+      </div>
+      <div class="panel-input hidden" id="panel-input-twene">
+        <button class="submit-button" id="twene-get">Discover</button>
+      </div>
+
+    </section>
+    <section class="writing">
+      <form class="editor">
+      </form>
+    </section>
+
+  </main>
+  <script src="main.js"></script>
+  <script src="init-tinymce.js"></script>
+</body>
+
+</html>
