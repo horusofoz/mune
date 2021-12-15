@@ -1,18 +1,14 @@
 const btnOracle = document.querySelector("#button-oracle");
-const btnIntervention = document.querySelector("#button-intervention");
-const btnPortent = document.querySelector("#button-portent");
-const btnTwene = document.querySelector("#button-twene");
-const btnNpcAttitude = document.querySelector("#button-npc-attitude");
+const btnTools = document.querySelector("#button-tools");
 // const btnPlots = document.querySelector("#button-plots");
 // const btnEntities = document.querySelector("#button-entities");
-const btnExport = document.querySelector("#button-export");
+const btnOptions = document.querySelector("#button-options");
 
 const panels = document.querySelectorAll(".panel");
 const panelOracle = document.querySelector("#panel-oracle");
-const panelExport = document.querySelector("#panel-export");
-
-const oracleInputQuestion = document.querySelector("#input-question");
-const oracleInputLikelihood = document.querySelector("#input-likelihood");
+const panelTools = document.querySelector("#panel-tools");
+const panelOptions = document.querySelector("#panel-options");
+const panelWriting = document.querySelector(".writing");
 
 /* UI */
 function setPanelVisibility(panel) {
@@ -26,6 +22,15 @@ function setPanelVisibility(panel) {
       panel.classList.add("hidden");
     });
     panel.classList.remove("hidden");
+  }
+  setEditorVisibility();
+}
+
+function setEditorVisibility() {
+  if (panelOptions.classList.contains("hidden")) {
+    panelWriting.classList.remove("hidden");
+  } else {
+    panelWriting.classList.add("hidden");
   }
 }
 
@@ -59,6 +64,9 @@ function notImplemented(event) {
 
 /*ORACLE*/
 const btnOracleAsk = document.querySelector("#oracle-ask");
+const oracleInputQuestion = document.querySelector("#input-question");
+const oracleInputLikelihood = document.querySelector("#input-likelihood");
+
 const diplayInterventionPoints = document.querySelector(
   "#display-intervention-points"
 );
@@ -163,6 +171,16 @@ function testOracleIntervention(oracle) {
     diplayInterventionPoints.textContent = 0;
   }
 }
+
+/* TOOLS */
+btnTools.addEventListener("click", function () {
+  setPanelVisibility(panelTools);
+});
+
+const btnIntervention = document.querySelector("#button-intervention");
+const btnPortent = document.querySelector("#button-portent");
+const btnTwene = document.querySelector("#button-twene");
+const btnNpcAttitude = document.querySelector("#button-npc-attitude");
 
 /* INTERVENTION */
 btnIntervention.addEventListener("click", function () {
@@ -644,14 +662,12 @@ function getNpcAttitudeString(npcAttitude) {
 //   notImplemented(e);
 // });
 
-/* EXPORT */
-btnExport.addEventListener("click", function () {
-  setPanelVisibility(panelExport);
+/* OPTIONS */
+btnOptions.addEventListener("click", function () {
+  setPanelVisibility(panelOptions);
 });
 
 const btnExportHtml = document.querySelector("#export-html");
-const btnExportText = document.querySelector("#export-text");
-
 btnExportHtml.addEventListener("click", function () {
   exportToHTML();
 });
@@ -688,7 +704,8 @@ function exportToHTML() {
   download("mune.html", output);
 }
 
-btnExportText.addEventListener("click", function (e) {
+const btnExportText = document.querySelector("#export-text");
+btnExportText.addEventListener("click", function () {
   exportToText();
 });
 
@@ -699,3 +716,18 @@ function exportToText() {
   let output = htmlNode.textContent;
   download("mune.txt", output);
 }
+
+const btnAboutHowToMune = document.querySelector("#about-how-to-mune");
+btnAboutHowToMune.addEventListener("click", function () {
+  alert('Not implemented');
+});
+
+const btnSystemPDF = document.querySelector("#system-pdf");
+btnSystemPDF.addEventListener("click", function () {
+  alert('Not implemented');
+});
+
+const btnSystemSource = document.querySelector("#system-source");
+btnSystemSource.addEventListener("click", function () {
+  alert('Not implemented');
+});

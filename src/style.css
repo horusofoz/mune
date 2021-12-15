@@ -143,24 +143,44 @@ select {
   padding: 0;
   margin: 0;
   font-size: 1rem;
+  font-family: "Helvetica";
+}
+
+body {
+  height: 100%;
+  
+}
+
+.page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #005C45;
+  font-size: 1.5rem;
+  background: #F0F0F0;
 }
 
 main {
-  height: 95vh;
   width: 800px;
-  background: lightgray;
+  background: #F0F0F0;
   margin: auto;
-  font-family: "Helvetica";
-  padding: 10px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  flex-basis: 0;
+  flex-grow: 1;
 }
 
 .menu-bar {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   flex-wrap: wrap;
+  padding-bottom: 1rem;
 }
 
 .menu-button, .panel-button {
@@ -172,7 +192,7 @@ main {
   padding: 7px 16px;
   height: 3rem;
   color: #ffffff;
-  background: #008060;
+  background: #005C45;
   border-radius: 4px;
   font-weight: 500;
   font-size: 14px;
@@ -186,7 +206,6 @@ main {
 }
 
 .panel {
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -202,18 +221,24 @@ main {
   align-items: center;
 }
 
-.panel label,
-.panel p {
-  color: #008060;
+.panel label, #display-intervention-points {
+  color: #005C45;
   margin: 0;
+  font-size: 1.25rem;
+}
+
+#display-intervention-points {
+  text-align: left;
+  display: inline-block;
+  flex-grow: 1;
 }
 
 .panel #input-question,
 .panel #input-likelihood {
   flex-grow: 1;
-  border: 1px solid #008060;
+  border: 1px solid #005C45;
   background: #ffffff;
-  color: #008060;
+  color: #005C45;
   height: 1.5rem;
   font-size: 1rem;
   padding-left: 0.5rem;
@@ -221,7 +246,6 @@ main {
 
 .writing {
   height: 100%;
-  padding-top: 1rem;
 }
 
 .hidden {
@@ -236,8 +260,9 @@ main {
 }
 
 @media (max-width: 800px) {
-  main {
-    width: 95%;
+
+  main, header {
+    width: 100%;
   }
 
   .menu-button, .panel-button {
@@ -246,7 +271,7 @@ main {
 }
 
 .oracle {
-  color: #008060;
+  color: #005C45;
 }
 
 .game {

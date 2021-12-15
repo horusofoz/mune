@@ -11,58 +11,92 @@
 </head>
 
 <body>
-
-  <header>
-  </header>
-  <main>
-    <section class="menu-bar">
-      <button class="menu-button" id="button-oracle">Oracle</button>
-      <button class="menu-button" id="button-intervention">Intervention</button>
-      <button class="menu-button" id="button-portent">Portent</button>
-      <button class="menu-button" id="button-twene">TWENE</button>
-      <button class="menu-button" id="button-npc-attitude">NPC Attitude</button>
-      <!-- <button class="menu-button" id="button-plots">Plots</button>
+  <div class="page-container">
+    <header>
+      <h1 class="title">MUNE</h1>
+    </header>
+    <main>
+      <section class="menu-bar">
+        <button class="menu-button" id="button-oracle">Oracle</button>
+        <button class="menu-button" id="button-tools">Tools</button>
+        <!-- <button class="menu-button" id="button-plots">Plots</button>
       <button class="menu-button" id="button-entities">Entities</button> -->
-      <button class="menu-button" id="button-export">Export</button>
-    </section>
-    <section class="panel-container">
-      <div class="panel hidden" id="panel-oracle">
-        <div class="panel-row">
-          <label for="input-question">Question</label>
-          <input type="text" id="input-question" name="input-question">
-        </div>
-        <div class="panel-row">
-          <div class="input-likelihood-wrapper">
-            <label for="input-likelihood">Likelihood</label>
-            <select name="input-likelihood" id="input-likelihood">
-              <option value="unlikely">Unlikely</option>
-              <option value="even" selected>Even</option>
-              <option value="likely">Likely</option>
-            </select>
+        <button class="menu-button" id="button-options">Options</button>
+      </section>
+      <section class="panel-container">
+        <div class="panel hidden" id="panel-oracle">
+          <div class="panel-row">
+            <label for="input-question">Question</label>
+            <input type="text" id="input-question" name="input-question">
           </div>
-          <p>Intervention Points: <span id="display-intervention-points">0</span></p>
+          <div class="panel-row">
+            <div class="input-likelihood-wrapper">
+              <label for="input-likelihood">Likelihood</label>
+              <select name="input-likelihood" id="input-likelihood">
+                <option value="unlikely">Unlikely</option>
+                <option value="even" selected>Even</option>
+                <option value="likely">Likely</option>
+              </select>
+            </div>
+            <label>Intervention Points: </label><span id="display-intervention-points">0</span>
+          </div>
+          <div class="panel-row">
+            <button class="panel-button" id="oracle-ask">Ask</button>
+          </div>
         </div>
-        <div class="panel-row">
-          <button class="panel-button" id="oracle-ask">Ask</button>
+
+        <div class="panel hidden" id="panel-tools">
+          <div class="panel-row">
+            <button class="panel-button" id="button-intervention">Intervention</button>
+            <button class="panel-button" id="button-portent">Portent</button>
+            <button class="panel-button" id="button-twene">TWENE</button>
+            <button class="panel-button" id="button-npc-attitude">NPC Attitude</button>
+          </div>
         </div>
-      </div>
 
-      <div class="panel hidden" id="panel-export">
-        <div class="panel-row">
-          <button class="panel-button" id="export-html">HTML</button>
-          <button class="panel-button" id="export-text">Text</button>
-          
+        <div class="panel hidden" id="panel-options">
+          <div class="panel-row">
+            <label>Export</label>
+          </div>
+          <div class="panel-row">
+            <button class="panel-button" id="export-html">HTML</button>
+            <button class="panel-button" id="export-text">Text</button>
+          </div>
+          <div class="panel-row">
+            <label>About</label>
+          </div>
+          <div class="panel-row">
+            <button class="panel-button" id="about-how-to-mune">How To MUNE</button>
+          </div>
+          <div class="panel-row">
+            <label>System Reference</label>
+          </div>
+          <div class="panel-row">
+            <button class="panel-button" id="system-pdf">PDF Download</button>
+            <button class="panel-button" id="system-source">Source</button>
+          </div>
+          <div class="panel-row">
+            <label>Credits</label>
+          </div>
+          <div class="panel-row">
+            <p>MUNE System Creator: <a href="https://www.reddit.com/user/bionicle_fanatic"
+                target="_blank">u/bionicle_fantaic</a></p>
+          </div>
+          <div class="panel-row">
+            <p>MUNE Assistant Developer: <a href="https://jeffreysmith.com.au" target="_blank">Jeffrey Smith</a></p>
+          </div>
+
         </div>
-      </div>
 
-    </section>
+      </section>
 
-    <section class="writing">
-      <form class="editor">
-      </form>
-    </section>
+      <section class="writing">
+        <form class="editor">
+        </form>
+      </section>
 
-  </main>
+    </main>
+  </div>
   <script src="main.js"></script>
   <script src="init-tinymce.js"></script>
 </body>
