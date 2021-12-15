@@ -724,10 +724,10 @@ btnAboutHowToMune.addEventListener("click", function () {
 
 const btnSystemPDF = document.querySelector("#system-pdf");
 btnSystemPDF.addEventListener("click", function () {
-  alert('Not implemented');
+  window.open("mune_v5.pdf");
 });
 
 const btnSystemSource = document.querySelector("#system-source");
 btnSystemSource.addEventListener("click", function () {
-  alert('Not implemented');
+  window.open("https://homebrewery.naturalcrit.com/share/rkmo0t9k4Q");
 });
