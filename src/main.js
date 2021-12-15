@@ -653,18 +653,18 @@ const panelLists = document.querySelector("#panel-lists");
 const btnPlots = document.querySelector("#button-plots");
 const btnEntities = document.querySelector("#button-entities");
 
-btnLists.addEventListener("click", function (e) {
+btnLists.addEventListener("click", function () {
   setPanelVisibility(panelLists);
 });
 
 /* PLOTS */
-btnPlots.addEventListener("click", function (e) {
-  notImplemented(e);
+btnPlots.addEventListener("click", function () {
+  alert("Not implemented");
 });
 
 /* ENTITIES */
-btnEntities.addEventListener("click", function (e) {
-  notImplemented(e);
+btnEntities.addEventListener("click", function () {
+  alert("Not implemented");
 });
 
 /* OPTIONS */

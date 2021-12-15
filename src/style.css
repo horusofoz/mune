@@ -268,12 +268,5 @@ main {
   .menu-button, .panel-button {
     height: 2rem;
   }
-}
 
-.oracle {
-  color: #005C45;
-}
-
-.game {
-  color: #800000;
 }
