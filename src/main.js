@@ -1,16 +1,7 @@
-const btnOracle = document.querySelector("#button-oracle");
-const btnTools = document.querySelector("#button-tools");
-// const btnPlots = document.querySelector("#button-plots");
-// const btnEntities = document.querySelector("#button-entities");
-const btnOptions = document.querySelector("#button-options");
-
+/* UI */
 const panels = document.querySelectorAll(".panel");
-const panelOracle = document.querySelector("#panel-oracle");
-const panelTools = document.querySelector("#panel-tools");
-const panelOptions = document.querySelector("#panel-options");
 const panelWriting = document.querySelector(".writing");
 
-/* UI */
 function setPanelVisibility(panel) {
   // If panel already visible, hide it
   if (!panel.classList.contains("hidden")) {
@@ -63,13 +54,15 @@ function notImplemented(event) {
 }
 
 /*ORACLE*/
+const btnOracle = document.querySelector("#button-oracle");
+const panelOracle = document.querySelector("#panel-oracle");
 const btnOracleAsk = document.querySelector("#oracle-ask");
 const oracleInputQuestion = document.querySelector("#input-question");
 const oracleInputLikelihood = document.querySelector("#input-likelihood");
-
 const diplayInterventionPoints = document.querySelector(
   "#display-intervention-points"
 );
+
 let oracleLikelihood = "even";
 let interventionPoints = 0;
 
@@ -173,63 +166,12 @@ function testOracleIntervention(oracle) {
 }
 
 /* TOOLS */
-btnTools.addEventListener("click", function () {
-  setPanelVisibility(panelTools);
-});
-
+const btnTools = document.querySelector("#button-tools");
+const panelTools = document.querySelector("#panel-tools");
 const btnIntervention = document.querySelector("#button-intervention");
 const btnPortent = document.querySelector("#button-portent");
 const btnTwene = document.querySelector("#button-twene");
 const btnNpcAttitude = document.querySelector("#button-npc-attitude");
-
-/* INTERVENTION */
-btnIntervention.addEventListener("click", function () {
-  let intervention = getIntervention();
-  let string = getInterventionString(intervention);
-  appendOutput(string);
-});
-
-function getIntervention() {
-  const interventionTable = {
-    1: "New entity",
-    2: "Entity positive",
-    3: "Entity negative",
-    4: "Advance plot",
-    5: "Regress plot",
-    6: "Wild",
-  };
-
-  let roll = getRandomNum(1, 6);
-  return interventionTable[roll];
-}
-
-function getInterventionString(intervention) {
-  return `<p class="oracle">Intervention: ${intervention}</p><p>`;
-}
-
-/* PORTENT */
-btnPortent.addEventListener("click", function () {
-  let portent = getPortent();
-  let string = getPortentString(portent);
-  appendOutput(string);
-});
-
-function getPortent() {
-  let portent = {};
-  portent.verb = verbs[getRandomNum(0, verbs.length - 1)];
-  portent.adjective = adjectives[getRandomNum(0, adjectives.length - 1)];
-  portent.noun = nouns[getRandomNum(0, nouns.length - 1)];
-  return portent;
-}
-
-function getPortentString(portent) {
-  let string = '<p class="oracle">Portent: ';
-  string += `${portent.verb}, `;
-  string += `${portent.adjective}, `;
-  string += `${portent.noun}`;
-  string += `</p><p>`;
-  return string;
-}
 
 const verbs = [
   "rearrange",
@@ -598,6 +540,59 @@ const nouns = [
   "stockpile",
 ];
 
+btnTools.addEventListener("click", function () {
+  setPanelVisibility(panelTools);
+});
+
+/* INTERVENTION */
+btnIntervention.addEventListener("click", function () {
+  let intervention = getIntervention();
+  let string = getInterventionString(intervention);
+  appendOutput(string);
+});
+
+function getIntervention() {
+  const interventionTable = {
+    1: "New entity",
+    2: "Entity positive",
+    3: "Entity negative",
+    4: "Advance plot",
+    5: "Regress plot",
+    6: "Wild",
+  };
+
+  let roll = getRandomNum(1, 6);
+  return interventionTable[roll];
+}
+
+function getInterventionString(intervention) {
+  return `<p class="oracle">Intervention: ${intervention}</p><p>`;
+}
+
+/* PORTENT */
+btnPortent.addEventListener("click", function () {
+  let portent = getPortent();
+  let string = getPortentString(portent);
+  appendOutput(string);
+});
+
+function getPortent() {
+  let portent = {};
+  portent.verb = verbs[getRandomNum(0, verbs.length - 1)];
+  portent.adjective = adjectives[getRandomNum(0, adjectives.length - 1)];
+  portent.noun = nouns[getRandomNum(0, nouns.length - 1)];
+  return portent;
+}
+
+function getPortentString(portent) {
+  let string = '<p class="oracle">Portent: ';
+  string += `${portent.verb}, `;
+  string += `${portent.adjective}, `;
+  string += `${portent.noun}`;
+  string += `</p><p>`;
+  return string;
+}
+
 /* TWENE */
 btnTwene.addEventListener("click", function () {
   let twene = getTwene();
@@ -652,22 +647,39 @@ function getNpcAttitudeString(npcAttitude) {
   return `<p class="oracle">NPC Attitude: ${npcAttitude}</p><p>`;
 }
 
-// /* PLOTS */
-// btnPlots.addEventListener("click", function (e) {
-//   notImplemented(e);
-// });
+/* LISTS */
+const btnLists = document.querySelector("#button-lists");
+const panelLists = document.querySelector("#panel-lists");
+const btnPlots = document.querySelector("#button-plots");
+const btnEntities = document.querySelector("#button-entities");
 
-// /* ENTITIES */
-// btnEntities.addEventListener("click", function (e) {
-//   notImplemented(e);
-// });
+btnLists.addEventListener("click", function (e) {
+  notImplemented(e);
+});
+
+/* PLOTS */
+btnPlots.addEventListener("click", function (e) {
+  notImplemented(e);
+});
+
+/* ENTITIES */
+btnEntities.addEventListener("click", function (e) {
+  notImplemented(e);
+});
 
 /* OPTIONS */
+const btnOptions = document.querySelector("#button-options");
+const panelOptions = document.querySelector("#panel-options");
+const btnExportHtml = document.querySelector("#export-html");
+const btnExportText = document.querySelector("#export-text");
+const btnSystemPDF = document.querySelector("#system-pdf");
+const btnSystemSource = document.querySelector("#system-source");
+const btnAboutHowToMune = document.querySelector("#about-how-to-mune");
+
 btnOptions.addEventListener("click", function () {
   setPanelVisibility(panelOptions);
 });
 
-const btnExportHtml = document.querySelector("#export-html");
 btnExportHtml.addEventListener("click", function () {
   exportToHTML();
 });
@@ -704,7 +716,6 @@ function exportToHTML() {
   download("mune.html", output);
 }
 
-const btnExportText = document.querySelector("#export-text");
 btnExportText.addEventListener("click", function () {
   exportToText();
 });
@@ -717,17 +728,14 @@ function exportToText() {
   download("mune.txt", output);
 }
 
-const btnAboutHowToMune = document.querySelector("#about-how-to-mune");
 btnAboutHowToMune.addEventListener("click", function () {
-  alert('Not implemented');
+  alert("Not implemented");
 });
 
-const btnSystemPDF = document.querySelector("#system-pdf");
 btnSystemPDF.addEventListener("click", function () {
   window.open("mune_v5.pdf");
 });
 
-const btnSystemSource = document.querySelector("#system-source");
 btnSystemSource.addEventListener("click", function () {
   window.open("https://homebrewery.naturalcrit.com/share/rkmo0t9k4Q");
 });
