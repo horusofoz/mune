@@ -2,6 +2,7 @@ const btnOracle = document.querySelector("#button-oracle");
 const btnIntervention = document.querySelector("#button-intervention");
 const btnPortent = document.querySelector("#button-portent");
 const btnTwene = document.querySelector("#button-twene");
+const btnNpcAttitude = document.querySelector("#button-npc-attitude");
 // const btnPlots = document.querySelector("#button-plots");
 // const btnEntities = document.querySelector("#button-entities");
 const btnExport = document.querySelector("#button-export");
@@ -606,6 +607,31 @@ function getTwene() {
 
 function getTweneString(twene) {
   return `<p class="oracle">TWENE: ${twene}</p><p>`;
+}
+
+/* NPC Attitude */
+btnNpcAttitude.addEventListener("click", function () {
+  let npcAttitude = getNpcAttitude();
+  let string = getNpcAttitudeString(npcAttitude);
+  appendOutput(string);
+});
+
+function getNpcAttitude() {
+  const npcAttitudeTable = {
+    1: "Hostile",
+    2: "Hostile",
+    3: "Neutral",
+    4: "Neutral",
+    5: "Friendly",
+    6: "Friendly",
+  };
+
+  let roll = getRandomNum(1, 6);
+  return npcAttitudeTable[roll];
+}
+
+function getNpcAttitudeString(npcAttitude) {
+  return `<p class="oracle">NPC Attitude: ${npcAttitude}</p><p>`;
 }
 
 // /* PLOTS */

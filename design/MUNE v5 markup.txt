@@ -1,0 +1,424 @@
+<style>
+  .phb{
+    width : 210mm;
+    height : 296.8mm;
+  }
+</style>
+
+<style>
+/* Background */
+  .phb{ background-image: url("https://i.imgur.com/HCKjnGR.png") }
+  .phb{ background-size: cover }
+
+/* Notes */
+  .phb blockquote {background-color: #ffcc84}
+  .phb hr + blockquote tr:nth-child(odd) td {background-color: #ffbb44;}
+
+/* Tables */
+  table tr:nth-child(odd) td {background-color: #e0b85c}
+
+/* Footer */
+  .phb:after{
+    position         : absolute;
+    bottom           : -8px;
+    left             : 0px;
+    z-index          : -10;
+    height           : 340px;
+    width            : 100%;
+    background-image : url('https://i.imgur.com/aGlSUQ0.png');
+    background-size  : 210mm;
+}
+
+/* Page Number */
+.phb .pageNumber{
+    position   : absolute;
+    bottom     : 45px;
+    width      : 50;
+    text-align : center;
+}
+.phb:nth-child(even) .pageNumber{
+    left      : 47%;
+}
+.phb:nth-child(odd) .pageNumber{
+    right      : 47%;
+}
+
+.phb .pageNumber.auto{
+    position   : absolute;
+    bottom     : 48px;
+    width      : 50px;
+    text-align : center;
+}
+.phb:nth-child(even) .pageNumber.auto{
+    left      : 46.7%;
+}
+.phb:nth-child(odd) .pageNumber.auto{
+    right      : 46.75%;
+}
+
+</style>
+
+
+## The Madey Upy Namey Emulator.
+
+I honestly don't have a good name for this GM emulator, like Tiny Solitary Soldiers or Mythic. I guess MUNE is good enough.
+
+### Why play solo? How play solo?
+
+Have you been kicked out of your weekly game for playing an edgy jerk? Has your DM canceled due to crippling anxiety, again? Has a small meteor with the word SCHEDULING hit your house?
+
+And you still need to scratch that dungeon-roaming, character-building, monster-slaying itch? Then maybe solo D&D is the thing for you.
+
+*"Duwahhh? You can't play D&D by yourself, moron. That's not how TTRPGs work."*
+
+Why not?
+
+*"Because you need a DM..."*
+
+Ah, but you don't.
+
+* * *
+
+At the end of the day, the DM is a game engine. They're the Unity 3D, the GameMaker, the Unreal Engine that runs the world. They set the scene, await player input, and make the the game react to those actions (or lack thereof). The function of a DM is highly complex, working on multiple levels to achieve a cohesive experience. 
+
+But what if that could be simulated? Computer games try this all the time in games like The Witcher and Skyrim. They do pretty good jobs at creating linear stories for their players, but they could never hope to account for all the crazy things a player does in D&D. 
+
+... Or could they? 
+
+Ultimately, a computer fails because it doesn't have the creative aspect that a DM does. We can't create artificial creativity; but we can borrow it. 
+
+### Second Hand Creativity.
+
+Imagine an NPC. If you're not thinking of a blank, faceless, mannequin-like entity, then props to you, you're not a typical player. Now change something about that NPC; maybe it's their occupation, an aspect of their appearance, a different race... That NPC is no longer wholly yours. It's been modified, changed ever so slightly at the behest of someone else. 
+
+This is called second hand creativity, and it's the driving force of our emulated dungeon master, combined with the oracle system. 
+
+<img 
+  src='https://i.imgur.com/xowyjmx.png' 
+  style='position:absolute; bottom:0px; left:0px; width:55%; z-index:-11' />
+
+
+```
+```
+
+### The Oracle System. 
+
+When we start out a campaign in D&D, we have a couple of expectations even before any of the details have been divulged by the DM; we expect that our characters are going to start at level 1, and we expect that we're going to start in a tavern (is joke, sort of).
+
+Take a look at this table for a sec:
+
+##### Oracle
+| d6 | Answer |
+|:----:|:-----|
+| 1 | No, and... |
+| 2 | No. |
+| 3 | No, but... |
+| 4 | Yes, but... |
+| 5 | Yes. |
+| 6 | Yes, and... |
+
+This is the oracle. I can ask it questions as I would a DM. For example, I'm now going to ask if I start at the level 1. I roll a 5, so Yes. 
+
+I also ask if I start off in a tavern; the result is "No, but...". I interpret this as most likely meaning that I at least start off in a populated area. I'd like to be sure, so I ask the oracle if that's the case; but this time the answer is Likely going to be yes.
+
+### Likelihood. 
+
+(For the longest time I used a complex system of modifiers to push a questions towards either Yes or No, but after having my eyes opened by u/lemunde I switched to using his concept and never looked back.)
+
+If you ask a queston to the oracle which is particularly Likely to return Yes, roll an extra d6 with your oracle roll and take the highest result. If the question is particularly Unlikely to return Yes, roll an extra d6 and take the lower of the two.
+
+Essentially, you apply advantage/disadvantage to the roll.
+
+* * *
+
+For example;
+
+- I ask if we start in a city, and roll two d6 because a positive result is Likely. I get a "Yes, but..."; something isn't usual about my situation.
+- Maybe I'm not here of my own volition? I ask and receive a "Yes, and...".
+- I ask if I've been captured as a slave. I receive a Yes.
+
+* * *
+
+In four rolls we've gone from the bland startup of meeting potential adventure patrons in a tavern, to the much more exciting hook of escaping the captivity of some slavers. It could have started a myriad of other ways; I could have been imprisoned by the guards for some reason, I could have simply been visiting the city in order to earn some coin, or I could have even started in a completely different location. 
+
+That's the beauty of second hand creativity; it's all from you, but you never know where it's going to take you. 
+
+### Interventions.
+
+Using the oracle system on its own is a perfectly viable way of playing solo, but there's so much more that can be added on top to provide a more fleshed out experience. 
+
+<div class='pageNumber auto'></div>
+
+\page
+
+One of the first things to address is DM initiative. No, not the grab-your-weapons-and-tussle type of initiative. While the oracle modifies our expectations to take us places we could never dream of, it can never truly surprise us because we're always the ones asking the questions. Interventions simulate those moments when a DM springs a trap on us, introduces a helpful NPC out of the blue, or adds another ogre to the already huge pile of enemies to defeat.
+
+Whenever a 6 is rolled on an oracle question (including secondary dice if the question is Likely/Unlikely), you gain an intervention point. Keep track of them on a piece of paper or dice.
+
+When you've gained 3 intervention points, an Intervention occurs. Reset the points to 0 and resolve the nature of the Intervention using the table below.
+
+##### Intervention type
+| d6 | type |
+|:----:|:-------------|
+| 1 | New entity |
+| 2 | Entity positive |
+| 3 | Entity negative |
+| 4 | Advance plot |
+| 5 | Regress plot |
+| 6 | Wild |
+
+**New Entity.** A new entity appears. Maybe this introduction is beneficial to you, maybe not. The specifics can be gleaned from asking the oracle, with some potential help from a Portent (see below).
+
+Continuing to use our starting scenario, some examples of a new entity might see us encountering the head slaver, a potential buyer, or even a fellow slave with a plan to escape.
+
+
+> ##### Entities and Plots
+> It can help to keep a list of entities and plots currently active in the adventure, adding and removing them as they become relevant or otherwise. This way you can simply roll on the list, instead of spending time asking the oracle what specific entity or plot an Intervention is referring to.
+>
+> Below are some helpful definitions of what the two of them actually are;
+> * * *
+> An **entity** in the context of Interventions refers to any person or group of persons that are remotely autonomous, not simply specific NPCs and monsters. An entity might be;
+> * Old Jeph, the captain of the ship you hired.
+> * The elemental storming the king's castle.
+> * The town guards.
+> * A hooded stranger who's been stalking the party.
+> * * *
+> A **plot** is an unresolved story hook or thread that usually acts as a goal of some kind. A plot might be;
+> * Discover the location of the lich's tomb.
+> * Pay off a debt to a dangerous crime lord.
+> * The seige of the town you're currently residing in.
+> * Resurrect a fallen friend.
+
+**Entity Positive/Entity Negative.** This is rather self explanatory. Something good or bad happens to an entity, the specifics of which can be determined by asking the oracle (with some optional help from a Portent). 
+
+Again using our starting scenario as an example, some entity positives might include;
+
+* Slavers: A top-paying slave owner is visiting town, looking to buy.
+* Town guard: The guardsman at the town gates threatens to report the slavers for excessive cruelty, unless he's payed a "blind-eye" fee.
+* Player character: You pass by a butcher's market stall, upon which lies an easily swipable carving knife.
+
+Some entity negatives might include;
+
+* Player character: The journey to the village has worn you out, giving you one level of exhaustion.
+* Player character: You are targeted by a whip attack from a slave driver.
+* Town guard: A slave attempts and fails to steal a weapon from a guard, causing a commotion.
+
+**Advance Plot/Regress Plot.** This is also pretty self explanatory. Advancing a plot pushes an unresolved hook in a certain direction. An example of advancing a plot using the staring scenario might see the player rescued by a group of freedom fighters, and a plot regression might involve the player character being sold to a high-ranking city official.
+
+A plot advancement or regression should always help the the adventure progress, but it does so by either helping or hindering a certain goal or plot point.
+
+**Wild.** This is to simulate the completely unexpected. It's a catch-em-all Intervention that can be good, bad, neutral, or downright crazy. This is the option that allows for sudden twists of fate, such as a dragon swooping down to attack the village and allowing the slaves to escape in the ensuing chaos.
+
+Because a wild Intervention is so vague in  what it can represent, you kinda have to use a Portent to figure out what the heck it actually means. Which brings us nicely to...
+
+### Portents.
+
+A portent is essentially inspiration. It's a two word (or more) sentence that acts as a springboard for the imagination. Maybe you've got no clue what a particular Intervention should be, or maybe you've exhausted your ideas for why an NPC pulled you aside for an urgent chat. That's the time to use a Portent.
+
+Any random word generator will suffice for this. There are tonnes of these online, but a couple of my favourite are [Watch Out 4 Snakes](http://watchout4snakes.com/wo4snakes/random/randomphrase) and [Word Counter](https://wordcounter.net/random-word-generator). I generally have a two-word generation limit, because I find that any more starts to get kinda messy, but you do you.
+
+* * *
+
+For an exmaple, in our starting scenario a wild Intervention would require a Portent to figure out. The words I receive are "frail" and "jobbed". This could mean a bunch of things, so I get the oracle to narrow things down for me. 
+
+* I ask if a fellow slave looking very sickly approaches me for help; the answer is No. 
+* I ask if I get put to work doing a simple and easy job; No, but...
+* Maybe I'm sold to a weak, elderly owner? Yes.
+
+<div class='pageNumber auto'></div>
+
+\page
+
+Portents can sometimes be quite specific in what they're referring to, but this is the exception rather than the norm. Most of the time the word combinations will be too random to directly apply, so instead you have to use them as a guide for your imagination.
+
+* * *
+For instance, say I use a Portent to help me figure out what kind of monster I've encountered in a dungeon. I receive "delved" and "plutonium". The former immediately makes me think of a dwarf (or duergar), but plutonium is a little harder to directly fit into my D&D world. However, it *does* make me think of scientists and experimentation, which leads me to imagine a **dwarven artificer**.
+
+* * *
+It helps to think of Portents as a game of charades, where the word you're trying to guess equates to how the Portent fits within the context of the scenario.
+
+### NPC Interactions
+When crossing paths with an NPC, you generally have some idea of how they're gonna react. The prince will act lordly and noble, the beggar will ask you to donate to his charity, and the bandit will *ask you to donate to his charity*. But sometimes you turn up a loss at how an NPC is supposed to react.
+
+The first thing you want to do is determine their attitude towards you, which can be done with a simple d6 roll (using advantage and disadvantage as necessary);
+
+##### Starting attitude
+| d6 | Attitude |
+|:----:|:-------------|
+| 1-2  | Hostile |
+| 3-4  | Neutral |
+| 5-6  | Friendly |
+
+Assuming the NPC stops to talk, the topic of their conversation can be decided by a Portent. It's really that simple. No smoke and mirrors here.
+
+## Optimising Play.
+
+After playing solo for just over three years, across countless campaigns and two settings, I've found that there are a few things that can speed up and amplify the solo experience.
+
+### Automated character sheets.
+Seriously, I don't know how I'd be able to play without them. Some people prefer the physical nature of a good ol' pencil and paper, but I urge anyone attempting to play solo to at least give an electronic sheet a try. Some good ones off the top of my head are [OrcPub](https://orcpub2.com/) (for desktops), [5e Character Sheet](https://itunes.apple.com/us/app/fifth-edition-character-sheet/id967650851?mt=8) (for IOS), and my personal favourite, [Squire](https://play.google.com/store/apps/details?id=com.herd.ddnext&hl=en) (for Android; well worth the price for the full version).
+
+```
+```
+
+### Three strikes and you're out.
+When using the oracle system it can be quite easy to lose yourself in a maze of ands and buts, which can bog down the flow of the game. A good rule to use is that after 2 rolls on the oracle that result in an and/but answer, the 3rd roll ingores those modfiers and simply becomes yes/no.
+
+### Ignoring the MUNE.
+Solo play requires a balance of sticking to the rules and knowing when to throw stuff out. Sometimes nothing springs to mind for the nature of an Intervention, and Portents can often make zero sense within the context of the current adventure. The solution to this is rather simple: Ignore them.
+
+These systems aren't infallable, after all; they're a bunch of random generators that you're using to build a cohesive and logical game. If you get an Intervention that truly doesn't make sense, treat it as though it never occurred. If a Portent is too obscure to find inspiration from, simply generate another.
+
+### Subverting expectations
+The sample scenario is an acceptable way of putting questions to the oracle, but it's also pretty slow. We're putting forward highly specific questions to the oracle; "Do we start in a town?" "Am I captured by slavers?" "Does the town have a guard?"
+
+This is all well and good when you're setting the scene for the adventure, when nothing is certain (unless you wish it). But say my character walks into a tavern. I don't want to spend several minutes determining how full the place is, what kind of drink they serve, and whether there's the typical shady old man handing out quests. So I ask the oracle a single question:
+
+"Is everything as expected?"
+
+This can be phrased a number of different ways. "Does everything appear normal?" and  "Is there anything of interest?" are some variations I often use. This essentially skips all the nitty-gritty of having to figure out each detail, while still leaving room for the oracle to shine.
+
+These questions are best used sparingly at the start of different "scenes" and location changes, and should never be Likeley or Unlikely in order to maximise the chance for the unexpected to occur.
+
+If the oracle answers no, and an alteration doesn't immediately springs to mind, you can use a Portent to get an idea of what's different compared to your expectations. However, they leave a lot up for interpretation and can often be too random to immediately make sense of.
+
+* * *
+So when an everything isn’t as expected, roll on the the Table for When Everything is Not as Expected (or TWENE) to help narrow it down. 
+
+* * *
+
+I’m really pants at acronyms.
+
+<img 
+  src='https://i.imgur.com/7axwi5o.png' 
+  style='position:absolute; bottom:-40px; left:0px; width:100%; z-index:-11;' />
+
+<div class='pageNumber auto'></div>
+
+\page
+
+##### Table for When Everything is Not as Expected
+| d10 | Result |
+|:----:|:-------------|
+| 1 | Increase simple element |
+| 2 | Decrease simple element |
+| 3 | Add simple element |
+| 4 | Remove simple element |
+| 5 | Increase major element |
+| 6 | Decrease major element |
+| 7 | Add major element |
+| 8 | Remove major element |
+| 9 | Wild positive |
+| 10| Wild negative |
+
+
+
+Explanations for what the hell the results mean are as follows;
+
+**Major/Simple elements**.  Most result on the table will mention a major or simple element. An element is anything in the scene; spacial dimensions, NPCs, lighting conditions, weather, smells, the whole shebang. A major element is something that is affecting the scene, and may even be in the Plot or Entity lists. A simple element is something of minimal importance (such as the paintings in a mansion’s parlour or the crowd at a festival). When choosing a simple element, pick something that on its own wouldn’t make a difference to how the scene plays out.
+If you’re having trouble figuring out what element to pick, a Portent can be a great pointer. Just remember to stay within the boundary of what constitutes a major or simple element.
+
+**Increase/Decrease**. Increasing means an existing element is somehow made bigger. More of this element, yes please. More monsters, more tunnels, more rain, more animosity from the local barkeep. This element increases in scale or importance, potentially turning it into something that could be added to the Plot or Entity lists. The opposite of this is Decrease, where an element is reduced; laxer security around the artefact, less handholds to climb the cliff with, no mozzies savaging you in the boggy swamp. 
+
+**Add/Remove element**. I mean, it’s kind of self explanatory. An element now exists in the scene that you weren’t previously aware of, be it an important one (like a hidden room or a backstabbing NPC) or a more fluff-ish element that adds to the flavour instead of directly influencing the adventure.
+
+**Wild positive/negative**. Like the Wild result on the Intervention Type table, this option allows you to go crazy with whatever idea first comes to mind. Because it can be a little obscure (and the whole point of this table is to narrow down obscure answers), the wild alteration can either be positive or negative for the party. This should help an idea spring to mind, but if nothing immediately grabs you and throws you off a cliff then a Portent can help point you in the right direction.
+
+* * *
+
+Some examples of the table in use;
+
+<div class='descriptive'>
+*Three weeks have passed since the Steel Revolt declared their presence in the city of Neatol. The assassination of the high cleric Nilos was claimed by these revolutionaries, although their motives for targeting the clergy are still unknown. Inquisitor Galan has been working to infiltrate the group, and has managed to secure a meeting inside the city’s famous Spectral Theatre.*
+</div>
+
+
+* * *
+
+I’m imagining a giant sparkly globe set high on a tower, where the nobility congregate to see magical light shows and holograms accompanied by orchestral music. It’s a fairly sizeable structure with dim lighting inside, as only a few tourists and workers straggle behind after the performance. The contact is waiting in the seats, wearing a dark hood through which peer his glowing red eyes.
+
+* * *
+
+I ask the Oracle if anything about the scene is not as expected, receive a Yes, and roll on the TWENE. Below are the different ways I would interpret the results. 
+
+* ***Increase simple element:*** The theatre literally just wrapped up its final performance, and Nilos catches the tail end of it as the music fades. The shadowy contact is much harder to pick out in the crowd, and for secrecy’s sake he’ll have to wait until the crowd files out before initiating contact.
+* ***Decrease simple element:*** It’s much more quieter in the theatre than expected, and the little noise from the stragglers echo like in an empty cathedral. There’s a chance that even a whispered conversation might be overheard.
+* ***Add simple element:*** Not sure what to add, I ask for a Portent and receive “demonstrative aplomb”. The cheers and chatter of the audience outside spreads back into the theatre, muffling Nilos’ footsteps as he approaches.
+* ***Remove simple element:*** Gone are the workers. Just Nilos, the contact, and the tourists remain. Are they tourists? Or is this an ambush?
+* ***Increase major element:*** The only real major element here is the contact, so this makes the interpretation all the more easy; Hoody McRed-Eyes seems to have brought a small retinue along with him, sullen thugs who look highly out of place in the refined surroundings.
+* ***Decrease major element:*** The contact doesn’t appear overtly evil or suspicious, throwing some doubt about which of the stragglers Nilos should approach.
+* ***Add major element:*** The theatre has its own protection, a couple of well-armoured guards standing each side of the door. They keep careful watch on the audience during performances, and may be a source of trouble or help if the meeting turns sour.
+* ***Remove major element:*** The contact is missing. This means he’s either hiding in the few shadows (possibly to spring an ambush or stay out of the public’s sight) or called Nilos’ bluff.
+* ***Wild positive:*** My Portent result gives me “Groovier hypotenuse”. Hah, okay. One of the orchestra members is legging behind to play an upbeat tune on a complex instrument, delighting a couple of watching tourists.
+
+<div class='pageNumber auto'></div>
+
+\page
+
+<img 
+  src='https://i.imgur.com/1YA24IN.png' 
+  style='position:absolute; top:0px; right:0px; width:100%' />
+  
+<div style='margin-top:520px'></div>
+
+
+* ***Wild negative:*** The Portent is “Buggiest segmentation”, which I interpret as a particularly large glowwasp threatening anyone who approaches the theatre’s doors. I guess Nilos will have to deal with that before heading inside.
+
+This can actually be used to add a twist to modules, too. Simply by reading through a scene or room and asking “is everything as the module says?” can lead to a vastly different experience to what’s on the paper. 
+
+### Final words.
+
+There's no right or wrong way to play D&D, so long as you're having fun (and not encroaching on someone else's). These are simply guidelines, they're one man's way of playing. You play how you want, with who you want.
+
+And most importantly; like, subscribe, smash that paranormal activity button...
+
+<div style='margin-top:40px'></div>
+
+
+
+## Chaneglog
+
+### V1
+* Created the thing.
+
+### V2
+* Switched around the results on the oracle table, because reading a brief wiki answer on how probability works, and then basing the table off that, was a bad idea.
+
+* * *
+
+<div style='margin-top:520px'></div>
+
+
+
+
+### V3
+* Changed some typos that somehow slipped past the rigorous proofreading process. No seriously, I spent like, a whole two minutes re-reading this thing once I'd vomited it out.
+
+
+### V4
+* Expanded upon subverted expectations, utilising excessively verebose procedures.
+
+### V5
+* Spring cleaning.
+
+<div style='margin-top:40px'></div>
+
+
+> ##### Further reading
+> Want to check out a transcript of a typical session using MUNE? There are some links here... You can follow them, if you wish. If you do not wish, then you should probably get your genie gland checked out by a doctor.
+>
+> * * *
+>
+> A brand new session, new characters, new plot:
+>https://empaitirkosu.wordpress.com/2020/03/07/raid-in-rahm-oru/
+>
+> * * * 
+>
+> A more combat-focused but higher level session:
+>https://empaitirkosu.wordpress.com/2018/07/25/blow-by-blow-session-intro/
+
+
+
+  
+<div class='pageNumber auto'></div>
+
