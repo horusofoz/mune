@@ -654,7 +654,7 @@ const btnPlots = document.querySelector("#button-plots");
 const btnEntities = document.querySelector("#button-entities");
 
 btnLists.addEventListener("click", function (e) {
-  notImplemented(e);
+  setPanelVisibility(panelLists);
 });
 
 /* PLOTS */
